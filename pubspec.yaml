@@ -40,7 +40,6 @@ dependencies:
 
   # Export
   pdf: ^3.10.7
-  docx: ^0.4.0
 
   # Translation
   google_mlkit_translation: ^0.10.0
