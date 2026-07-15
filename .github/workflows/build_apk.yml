@@ -20,10 +20,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
+      - name: Download Flutter SDK
+        run: |
+          wget -qO flutter.tar.xz https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.24.0-stable.tar.xz
+          tar -xf flutter.tar.xz
+          rm flutter.tar.xz
+          echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
+          flutter config --android-widgets --no-analytics
 
       - name: Install dependencies
         run: flutter pub get
