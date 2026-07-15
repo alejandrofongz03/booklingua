@@ -1,0 +1,92 @@
+name: booklingua
+description: BookLingua - Traduce libros completos de Inglés a Español
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.2.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management & DI
+  flutter_riverpod: ^2.4.9
+  get_it: ^7.6.7
+
+  # Navigation
+  go_router: ^13.0.1
+
+  # Database & Cache
+  sqflite: ^2.3.2
+  path_provider: ^2.1.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # File Handling
+  file_picker: ^6.1.1
+  path: ^1.8.3
+  mime: ^1.0.4
+
+  # EPUB
+  epubx: ^0.0.3
+
+  # PDF
+  syncfusion_flutter_pdf: ^24.2.9
+
+  # DOCX
+  archive: ^3.4.9
+  xml: ^6.5.0
+
+  # Export
+  pdf: ^3.10.7
+  docx: ^0.4.0
+
+  # Translation
+  google_mlkit_translation: ^0.10.0
+
+  # UI
+  flutter_animate: ^4.3.0
+  shimmer: ^3.0.0
+  percent_indicator: ^4.2.3
+  fl_chart: ^0.66.2
+  cached_network_image: ^3.3.1
+
+  # Background Processing
+  flutter_isolate: ^2.0.4
+  workmanager: ^0.5.2
+
+  # Utilities
+  logger: ^2.0.2
+  crypto: ^3.0.3
+  intl: ^0.19.0
+  uuid: ^4.2.2
+  equatable: ^2.0.5
+  connectivity_plus: ^5.0.2
+  open_filex: ^4.4.0
+  share_plus: ^7.2.2
+
+  # Functional Programming
+  dartz: ^0.10.1
+
+  # Notifications
+  flutter_local_notifications: ^17.1.2
+
+  # HTTP
+  http: ^1.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+
+  # Testing
+  mocktail: ^1.0.2
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/fonts/

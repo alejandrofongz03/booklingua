@@ -1,0 +1,3 @@
+-keep class com.booklingua.app.** { *; }
+-keep class com.google.mlkit.** { *; }
+-dontwarn com.google.mlkit.**
