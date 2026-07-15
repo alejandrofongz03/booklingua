@@ -10,7 +10,13 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        run: git clone --depth 1 https://github.com/alejandrofongz03/booklingua.git .
+
+      - name: Setup Java
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq openjdk-17-jdk-headless
 
       - name: Download Flutter
         run: |
@@ -19,18 +25,18 @@ jobs:
           rm flutter.tar.xz
           echo "$PWD/flutter/bin" >> $GITHUB_PATH
 
-      - name: Setup Java
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq openjdk-17-jdk-headless
+      - name: Install deps
+        run: flutter pub get
 
-      - name: Build
-        run: |
-          flutter pub get
-          flutter build apk --release --split-per-abi
+      - name: Build APK
+        run: flutter build apk --release --split-per-abi
 
-      - name: Upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: apk-release
-          path: build/app/outputs/flutter-apk/*.apk
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="build-$(date +%Y%m%d-%H%M%S)"
+          gh release create "$TAG" \
+            --title "APK build $(date +%Y-%m-%d)" \
+            --notes "Build automático del commit ${{ github.sha }}" \
+            build/app/outputs/flutter-apk/*.apk
