@@ -28,9 +28,6 @@ dependencies:
   path: ^1.8.3
   mime: ^1.0.4
 
-  # EPUB
-  epubx: ^0.0.3
-
   # PDF
   syncfusion_flutter_pdf: ^24.2.9
 
@@ -46,14 +43,7 @@ dependencies:
 
   # UI
   flutter_animate: ^4.3.0
-  shimmer: ^3.0.0
   percent_indicator: ^4.2.3
-  fl_chart: ^0.66.2
-  cached_network_image: ^3.3.1
-
-  # Background Processing
-  flutter_isolate: ^2.0.4
-  workmanager: ^0.5.2
 
   # Utilities
   logger: ^2.0.2
@@ -61,7 +51,6 @@ dependencies:
   intl: ^0.19.0
   uuid: ^4.2.2
   equatable: ^2.0.5
-  connectivity_plus: ^5.0.2
   open_filex: ^4.4.0
   share_plus: ^7.2.2
 
