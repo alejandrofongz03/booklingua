@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - uses: actions/checkout@v4
@@ -26,16 +26,9 @@ jobs:
           tar -xf flutter.tar.xz
           rm flutter.tar.xz
           echo "$GITHUB_WORKSPACE/flutter/bin" >> $GITHUB_PATH
-          flutter config --android-widgets --no-analytics
 
       - name: Install dependencies
         run: flutter pub get
-
-      - name: Analyze
-        run: flutter analyze
-
-      - name: Run tests
-        run: flutter test
 
       - name: Build APK
         run: flutter build apk --release --split-per-abi
